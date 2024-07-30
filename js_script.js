@@ -1,83 +1,98 @@
-let num1 = '0';
-let num2 = '0';
+let num1 = '';
+let num2 = '';
 let operator=''; 
 let output;
+
 
 let input = document.querySelectorAll('button');
 let inputDisplay = document.querySelector('.inputDisplay');
 let outcomeDisplay = document.querySelector('.outcomeDisplay');
 
-input.forEach(button => {
-    button.addEventListener('click',(event)=> {
-        let inputEle = event.target
-        if(inputEle.classList.contains('digit') && (!operator)){
-            if(num1[0]== 0){
-                num1 = inputEle.textContent;
-                outcomeDisplay.textContent = num1;
-            } else {
-                num1 += inputEle.textContent;
-                outcomeDisplay.textContent = num1;
-            }
+function inputNum(num, inputValue){
+    if(!num) num = '0';
+
+    if(inputValue ==='.'){
+        num.includes('.') ? num :  num += '.';
+        
+
+    } else if(inputValue === 'Backspace' ){
+        num.length === 1 ? 
+        num = '0' 
+        : num = num.slice(0,-1)
+
+    } else if(num[0]== 0 && num[1]!=='.'){
+        num = inputValue;
+
+    } else {
+        num += inputValue;
+    }
+    outcomeDisplay.textContent = num;
+    return num
+}
+
+
+function mainCalculation(inputValue,inputType){
+        if(inputType ==='digit' && (!operator)){
+            num1 = inputNum(num1, inputValue);
             console.log(num1)
-        } else if (inputEle.classList.contains('operator') && (!operator)){
+
+        } else if (inputType ==='operator' && (!operator)){
             
-            operator = inputEle.textContent;
+            operator = inputValue;
             inputDisplay.textContent = num1 + operator;
-            outcomeDisplay.textContent = num2;
+            outcomeDisplay.textContent = '0';
+
             console.log(num1)
             console.log(operator)
-        } else if(inputEle.classList.contains('digit') && operator){
-            if(num2[0]== 0){
-                num2 = inputEle.textContent;
-                outcomeDisplay.textContent = num2;
-            } else {
-                num2 += inputEle.textContent;
-                outcomeDisplay.textContent = num2;
-            }
-            console.log(num2)
-        } else if (inputEle.classList.contains('equal')){
+
+        } else if(inputType ==='digit' && operator){
+                num2 = inputNum(num2, inputValue);
+                console.log(num2)
+
+        } else if (inputType ==='equal'){
             if((!num1)&& (!num2)&&(!operator)){
-                inputDisplay.textContent = '';
+                inputDisplay.textContent = '0';
                 outcomeDisplay.textContent = '0';
-            } else if((!operator) || (!num2)){
-                inputDisplay.textContent = ''
+
+            } else if((!operator)){
+
                 outcomeDisplay.textContent = num1;
-            } else if(operator === '/' && Number(num2)=== 0){
+
+            }  else if(operator === '/' && Number(num2)=== 0){
                 alert(`Error!Can't be divided by 0!`);
                 
-            } else {output = operate(num1,num2,operator);
-                inputDisplay.textContent = num1 + operator + num2 + '=';
+            } else {
+                output = operate(num1,num2,operator);
+                inputDisplay.textContent = num1 + operator + num2;
                 outcomeDisplay.textContent = outputNum(output);
                 
                 console.log(outputNum(output))
         }
-        } else if (inputEle.classList.contains('operator') && operator){
-            if(num2 === '0'){
-                operator = inputEle.textContent;
+        } else if (inputType ==='operator' && operator){
+            if(num2 == ''){
+                operator = inputValue;
                 inputDisplay.textContent = num1 + operator;
-                outcomeDisplay.textContent = num2;
+                outcomeDisplay.textContent = '0';
+
             } else if(operator === '/' && Number(num2)=== 0){
                 alert(`Error!Can't be divided by 0!`);
             } else {
                 output = operate(num1,num2,operator);
                 num1 = outputNum(output);
-                num2 = '0';
-                operator = inputEle.textContent;
+                num2 = '';
+                operator = inputValue;
                 inputDisplay.textContent = num1 + operator
-                outcomeDisplay.textContent = num2;
+                outcomeDisplay.textContent = '0';
             }
-        } else if (inputEle.classList.contains('clear')){
+        } else if (inputType ==='allClear'){
             num1 = '';
             num2 = '';
             operator = '';
             outcomeDisplay.textContent = '0';
-            inputDisplay.textContent = '';
-        }
-       
+            inputDisplay.textContent = '0';
 
-    });
-});
-
+        } 
+}
 
 
 
@@ -128,3 +143,54 @@ function outputNum(num){
     return num;
 }
 
+
+
+
+let inputValue = '';
+let inputType = '';
+
+window.addEventListener('keyup',(event)=>{
+    let keyInput = event.key;
+    
+    const digits = ['0','1','2','3','4','5','6','7','8','9','.','Backspace'];
+    const keyOperator = ['+','-','*',"/"]
+    const keyEqual = ['=']
+
+    if(digits.includes(keyInput)){
+        inputValue = keyInput;
+        inputType = 'digit';
+    } else if(keyOperator.includes(keyInput)){
+        inputValue = keyInput;
+        inputType = 'operator';
+    } else if(keyEqual.includes(keyInput)){
+        inputValue = keyInput;
+        inputType = 'equal';
+    } 
+    
+    console.log(inputValue);
+    console.log(inputType);
+    mainCalculation(inputValue,inputType)
+})
+
+input.forEach(button => {
+    button.addEventListener('click',(event)=> {
+
+        let inputEle = event.target
+        inputValue = inputEle.textContent;
+
+        if(inputEle.classList.contains('digit')){
+            inputType = 'digit';
+        } else if (inputEle.classList.contains('operator')){
+            inputType = 'operator';
+        } else if (inputEle.classList.contains('equal')){
+            inputType = 'equal';
+        } else if ( inputEle.classList.contains('allClear')){
+           inputType = 'allClear';
+        }
+
+        console.log(inputValue);
+        console.log(inputType);
+        mainCalculation(inputValue,inputType)
+    
+    })
+})
