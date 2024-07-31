@@ -15,10 +15,11 @@ function inputNum(num, inputValue){
         num.includes('.') ? num :  num += '.';
         
 
-    } else if(inputValue === 'Backspace' ){
-        num.length === 1 ? 
-        num = '0' 
-        : num = num.slice(0,-1)
+    } else if(inputValue === 'Backspace' || inputValue === 'Clear' ){
+        outcomeDisplay.textContent.length === 1 ? 
+        outcomeDisplay.textContent = '0' 
+        :  outcomeDisplay.textContent =  outcomeDisplay.textContent.slice(0,-1)
+        num =  outcomeDisplay.textContent;
 
     } else if(num[0]== 0 && num[1]!=='.'){
         num = inputValue;
@@ -176,15 +177,19 @@ input.forEach(button => {
     button.addEventListener('click',(event)=> {
 
         let inputEle = event.target
-        inputValue = inputEle.textContent;
+        
 
         if(inputEle.classList.contains('digit')){
+            inputValue = inputEle.textContent;
             inputType = 'digit';
         } else if (inputEle.classList.contains('operator')){
+            inputValue = inputEle.textContent;
             inputType = 'operator';
         } else if (inputEle.classList.contains('equal')){
+            inputValue = inputEle.textContent;
             inputType = 'equal';
         } else if ( inputEle.classList.contains('allClear')){
+           inputValue = inputEle.textContent;
            inputType = 'allClear';
         }
 
