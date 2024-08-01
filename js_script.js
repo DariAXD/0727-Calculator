@@ -15,7 +15,7 @@ function inputNum(num, inputValue){
         num.includes('.') ? num :  num += '.';
         
 
-    } else if(inputValue === 'Backspace' || inputValue === 'Clear' ){
+    } else if(inputValue === 'Backspace' || inputValue === 'C' ){
         outcomeDisplay.textContent.length === 1 ? 
         outcomeDisplay.textContent = '0' 
         :  outcomeDisplay.textContent =  outcomeDisplay.textContent.slice(0,-1)
@@ -124,7 +124,7 @@ function operate(num1,num2,operator){
             return subtract(num1,num2);
             break;
 
-        case '*':
+        case 'x'&& '*':
             return multiply(num1,num2);
             break;
 
@@ -154,7 +154,7 @@ window.addEventListener('keyup',(event)=>{
     let keyInput = event.key;
     
     const digits = ['0','1','2','3','4','5','6','7','8','9','.','Backspace'];
-    const keyOperator = ['+','-','*',"/"]
+    const keyOperator = ['+','-','x',"/",'*']
     const keyEqual = ['=']
 
     if(digits.includes(keyInput)){

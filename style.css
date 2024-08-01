@@ -1,0 +1,128 @@
+
+/* display of element */
+
+html body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    width: 30vw;
+    height:auto;
+    margin-top: 15%;
+    border: thin solid black;
+    padding-bottom: 1em;
+}
+
+.display{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: stretch;
+    margin:1vw 5px 0;
+    padding:0;
+    text-align: right;
+    
+}
+
+.inputDisplay {
+    height:3vw;
+    width:28vw;
+    border: thin solid gray;
+    align-self: center;
+    box-sizing: border-box;
+    padding:5px;
+    padding-right: 10px;
+    font-size:large;
+    margin:1vw 0;
+   
+}
+
+.outcomeDisplay{
+    height:5vw;
+    width:28vw;
+    border:thin solid gray;
+    align-self: center;
+    padding:0;
+    font-size: 40px;
+    padding:5px 0 ;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.inputButton{
+    display: flex;
+    width: 28vw;
+    height:auto;
+    justify-content: space-around;
+    align-items: stretch;
+    margin:0;
+    
+    border: thin solid gray;
+    align-self: center;
+    box-sizing: border-box;
+    padding:1vw;
+    align-self: center;
+    
+}
+
+.numbers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:1vw;
+    width: 18vw;
+    align-self: center;
+    
+    padding:0;
+
+}
+
+.operators{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:0;
+
+
+}
+
+button {
+    width: 5vw;
+    height: 5vw;
+    font-size: x-large;
+
+}
+
+.zero {
+    width: 12vw;
+    height: 5vw;
+}
+
+ .equal{
+    width: 5vw;
+    height: 11vw;
+}
+
+
+
+/* the style of elements */
+html, body{
+    background-color: rgb(232, 232, 232);
+}
+
+main{
+    border-radius: 20px;
+    border: 2.5px solid rgb(255, 255, 255);
+    filter: drop-shadow(0 0mm 0.6rem rgb(189, 189, 189));
+    background-color: rgb(230, 229, 229);
+    opacity: 0.6;
+
+}
