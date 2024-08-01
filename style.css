@@ -17,58 +17,61 @@ main{
     width: 30vw;
     height:auto;
     margin-top: 15%;
-    border: thin solid black;
-    padding-bottom: 1em;
+   
+    
 }
 
 .display{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-self: stretch;
-    margin:1vw 5px 0;
+    align-content:center ;
+    margin:1vw 5px 0 0;
     padding:0;
     text-align: right;
+    
     
 }
 
 .inputDisplay {
-    height:3vw;
-    width:28vw;
+    height:auto;
+    width:30vw;
     border: thin solid gray;
     align-self: center;
     box-sizing: border-box;
-    padding:5px;
-    padding-right: 10px;
-    font-size:large;
-    margin:1vw 0;
+    padding:5px 13px 0 0;
+    font-size:20px;
+    margin:1vw 0 0 0;
+    box-sizing: border-box;
    
 }
 
 .outcomeDisplay{
-    height:5vw;
-    width:28vw;
-    border:thin solid gray;
+    height:auto;
+    width:30vw;
+    border:1px solid gray;
     align-self: center;
-    padding:0;
-    font-size: 40px;
-    padding:5px 0 ;
-    padding-right: 10px;
+    font-size: 45px;
+    padding:0 10px 0 0;
+
     box-sizing: border-box;
+    margin-bottom:1vw;
+
 }
 
 .inputButton{
     display: flex;
-    width: 28vw;
+    width: 30vw;
     height:auto;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: stretch;
     margin:0;
     
     border: thin solid gray;
     align-self: center;
     box-sizing: border-box;
-    padding:1vw;
+    padding:1vw 0;
     align-self: center;
     
 }
@@ -77,8 +80,8 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap:1vw;
-    width: 18vw;
+    gap: 1rem;
+    width: 20vw;
     align-self: center;
     
     padding:0;
@@ -101,14 +104,11 @@ button {
 
 }
 
-.zero {
-    width: 12vw;
-    height: 5vw;
-}
+
 
  .equal{
     width: 5vw;
-    height: 11vw;
+    height: 12vw;
 }
 
 
@@ -116,13 +116,66 @@ button {
 /* the style of elements */
 html, body{
     background-color: rgb(232, 232, 232);
+    font-family: "Jost", sans-serif;
+    background-image: url('https://github.com/ThereseXD/0727-Calculator/blob/main/background_img.jpg?raw=true');
 }
 
 main{
     border-radius: 20px;
     border: 2.5px solid rgb(255, 255, 255);
     filter: drop-shadow(0 0mm 0.6rem rgb(189, 189, 189));
-    background-color: rgb(230, 229, 229);
+    background-color: rgb(227, 227, 227);
     opacity: 0.6;
 
+}
+
+.inputButton{
+    border-radius: 0 0 20px;
+    border: 0px solid rgb(255, 255, 255);
+    
+    background-color: rgb(246, 246, 246);
+    opacity: 0.8;
+}
+
+button{
+    border: 0px solid rgb(170, 170, 170);
+    background-color: rgb(246, 246, 246);
+    font-family: "Jost", sans-serif;
+    font-size:32px;
+    font-weight: 300;
+}
+
+.clear, .allClear{
+    font-size:26px;
+    line-height:2.3;
+}
+
+.operator, .equal{
+    font-size:43px;
+    
+}
+
+.operator{
+    line-height: 0.5;
+}
+
+
+
+
+.clear, .allClear,.operator, .equal{
+    background-color: #e4e3e3;
+    border-radius: 50%;
+}
+
+.equal{
+    line-height: 4.9;
+    border-radius: 40px;
+}
+
+.inputDisplay, .outcomeDisplay{
+    border: 0px solid gray;
+}
+
+.inputDisplay{
+    color: rgb(255, 255, 255);
 }

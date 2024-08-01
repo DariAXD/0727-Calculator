@@ -120,15 +120,15 @@ function operate(num1,num2,operator){
             return add(num1,num2);
             break;
         
-        case '-':
+        case '-' && '−':
             return subtract(num1,num2);
             break;
 
-        case 'x'&& '*':
+        case 'x'&& '*' && '×':
             return multiply(num1,num2);
             break;
 
-        case '/':
+        case '/' && '÷':
             return divide(num1,num2);
             break;
     }
@@ -154,7 +154,7 @@ window.addEventListener('keyup',(event)=>{
     let keyInput = event.key;
     
     const digits = ['0','1','2','3','4','5','6','7','8','9','.','Backspace'];
-    const keyOperator = ['+','-','x',"/",'*']
+    const keyOperator = ['+','-','x',"/",'*','÷','×']
     const keyEqual = ['=']
 
     if(digits.includes(keyInput)){
