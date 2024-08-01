@@ -14,10 +14,14 @@ main{
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
-    width: 30vw;
+    width:30vw;
     height:auto;
-    margin-top: 15%;
-   
+    box-sizing: border-box;
+    margin-top: 14%;
+    min-width: 349px;
+    min-height:519px;
+    
+    
     
 }
 
@@ -27,52 +31,68 @@ main{
     justify-content: space-around;
     align-self: stretch;
     align-content:center ;
-    margin:1vw 5px 0 0;
-    padding:0;
+    
+   
     text-align: right;
+    box-sizing: border-box;
+    min-width: 348px;
+    min-height:127.5px;
+    width:30vw;
+    
+    
     
     
 }
 
 .inputDisplay {
     height:auto;
-    width:30vw;
+    min-width: 348px;
     border: thin solid gray;
     align-self: center;
     box-sizing: border-box;
-    padding:5px 13px 0 0;
-    font-size:20px;
-    margin:1vw 0 0 0;
+    padding:0px 2.2vw 0 0;
+    font-size:24px;
+    margin:20px 1rem 0 0;
     box-sizing: border-box;
+    width:30vw;
    
 }
 
 .outcomeDisplay{
     height:auto;
-    width:30vw;
+    min-width: 348px;
     border:1px solid gray;
     align-self: center;
     font-size: 45px;
-    padding:0 10px 0 0;
+    padding:0 2vw 0 0;
+    margin-right:1rem;
 
     box-sizing: border-box;
-    margin-bottom:1vw;
+    margin-bottom:8px;
+    width:30vw;
+    
 
 }
 
 .inputButton{
     display: flex;
-    width: 30vw;
+    min-width: 346px;
+    min-height:380px;
     height:auto;
     justify-content: space-evenly;
     align-items: stretch;
-    margin:0;
+    
     
     border: thin solid gray;
     align-self: center;
     box-sizing: border-box;
-    padding:1vw 0;
-    align-self: center;
+    padding:1.2rem 0 1rem 0;
+    align-self: stretch;
+    
+    
+    
+
+   
     
 }
 
@@ -81,7 +101,9 @@ main{
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 1rem;
-    width: 20vw;
+    min-width: 228px;
+    min-height:344px;
+    width:20vw;
     align-self: center;
     
     padding:0;
@@ -93,6 +115,7 @@ main{
     flex-direction: column;
     justify-content: space-between;
     padding:0;
+    flex:0 0 auto;
 
 
 }
@@ -101,6 +124,9 @@ button {
     width: 5vw;
     height: 5vw;
     font-size: x-large;
+    min-width:57.8px;
+    min-height: 57.8px;
+    
 
 }
 
@@ -109,6 +135,9 @@ button {
  .equal{
     width: 5vw;
     height: 12vw;
+    min-width:57.8px;
+    min-height: 138.72px;
+    
 }
 
 
@@ -117,24 +146,26 @@ button {
 html, body{
     background-color: rgb(232, 232, 232);
     font-family: "Jost", sans-serif;
-    background-image: url('https://github.com/ThereseXD/0727-Calculator/blob/main/background_img.jpg?raw=true');
+    background-image: url('bkgimg2.jpg');
+    background-size: cover;
+    
 }
 
 main{
     border-radius: 20px;
-    border: 2.5px solid rgb(255, 255, 255);
+    border: 2.5px solid rgb(237, 249, 251);
     filter: drop-shadow(0 0mm 0.6rem rgb(189, 189, 189));
     background-color: rgb(227, 227, 227);
-    opacity: 0.6;
+    opacity: 0.7;
 
 }
 
 .inputButton{
-    border-radius: 0 0 20px;
+    border-radius: 0 0 17px 17px;
     border: 0px solid rgb(255, 255, 255);
     
     background-color: rgb(246, 246, 246);
-    opacity: 0.8;
+    opacity: 1;
 }
 
 button{
@@ -143,6 +174,7 @@ button{
     font-family: "Jost", sans-serif;
     font-size:32px;
     font-weight: 300;
+    
 }
 
 .clear, .allClear{
@@ -177,5 +209,5 @@ button{
 }
 
 .inputDisplay{
-    color: rgb(255, 255, 255);
+    color: rgb(129, 121, 121);
 }
