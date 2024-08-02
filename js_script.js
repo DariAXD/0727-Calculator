@@ -11,8 +11,11 @@ let outcomeDisplay = document.querySelector('.outcomeDisplay');
 function inputNum(num, inputValue){
     if(!num) num = '0';
 
-    if(inputValue ==='.'){
-        num.includes('.') ? num :  num += '.';
+    if(num.length >= 10){
+        num =num
+
+    } else if(inputValue ==='.' || inputValue ==='･'){
+        num.includes('.'||'･') ? num :  num += '.';
         
 
     } else if(inputValue === 'Backspace' || inputValue === 'C' ){
@@ -191,11 +194,31 @@ input.forEach(button => {
         } else if ( inputEle.classList.contains('allClear')){
            inputValue = inputEle.textContent;
            inputType = 'allClear';
-        }
+        } else if ( inputEle.classList.contains('null')){
+            inputValue = '';
+            inputType = '';
+         }
 
         console.log(inputValue);
         console.log(inputType);
         mainCalculation(inputValue,inputType)
     
+    })
+})
+
+
+input.forEach(button =>{
+    button.addEventListener('mousedown',(event)=>{
+        if(!event.target.classList.contains('null')){
+        event.target.style.backgroundColor = 'white';
+    }
+    })
+})
+
+input.forEach(button =>{
+    button.addEventListener('mouseup',(event)=>{
+        if(!event.target.classList.contains('null')){
+        event.target.style.backgroundColor = '';
+        }
     })
 })

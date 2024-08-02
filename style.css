@@ -3,10 +3,12 @@
 
 html body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
+    gap:3rem;
 }
 
 main{
@@ -17,9 +19,12 @@ main{
     width:30vw;
     height:auto;
     box-sizing: border-box;
-    margin-top: 14%;
+    margin-top: 20vh;
     min-width: 349px;
     min-height:519px;
+
+    max-width: 420px;
+    
     
     
     
@@ -31,13 +36,21 @@ main{
     justify-content: space-around;
     align-self: stretch;
     align-content:center ;
-    
+
    
     text-align: right;
     box-sizing: border-box;
-    min-width: 348px;
-    min-height:127.5px;
     width:30vw;
+    height:auto;
+
+
+    min-width: 348px;
+    min-height:140px;
+    
+    max-width: 419px;
+
+    margin-top: 3px;
+    margin-bottom: 3px;
     
     
     
@@ -50,11 +63,17 @@ main{
     border: thin solid gray;
     align-self: center;
     box-sizing: border-box;
-    padding:0px 2.2vw 0 0;
-    font-size:24px;
-    margin:20px 1rem 0 0;
+    padding:0px 2rem 0 0;
+    font-size:30px;
+    margin:20px 1rem 0px 2rem;
     box-sizing: border-box;
     width:30vw;
+
+    max-width: 419px;
+
+    line-height: 1;
+    text-wrap: wrap;
+    
    
 }
 
@@ -63,13 +82,20 @@ main{
     min-width: 348px;
     border:1px solid gray;
     align-self: center;
-    font-size: 45px;
-    padding:0 2vw 0 0;
-    margin-right:1rem;
+    font-size: 55px;
+    padding:0 1.8rem 0 0;
+    margin: 0 1rem 8px 2rem;
+
+    width:30vw;
+
+    max-width: 420px;
+
+    line-height:1;
 
     box-sizing: border-box;
-    margin-bottom:8px;
-    width:30vw;
+    text-wrap: wrap;
+    
+    
     
 
 }
@@ -89,6 +115,8 @@ main{
     padding:1.2rem 0 1rem 0;
     align-self: stretch;
     
+    max-width: 415px;
+    max-height:450px;
     
     
 
@@ -107,6 +135,8 @@ main{
     align-self: center;
     
     padding:0;
+    max-width: 280px;
+    max-height:414px;
 
 }
 
@@ -126,6 +156,9 @@ button {
     font-size: x-large;
     min-width:57.8px;
     min-height: 57.8px;
+
+    max-width:70px;
+    max-height: 70px;
     
 
 }
@@ -137,6 +170,8 @@ button {
     height: 12vw;
     min-width:57.8px;
     min-height: 138.72px;
+
+    max-height:168px;
     
 }
 
@@ -173,7 +208,8 @@ button{
     background-color: rgb(246, 246, 246);
     font-family: "Jost", sans-serif;
     font-size:32px;
-    font-weight: 300;
+    font-weight: 330;
+    border-radius: 50%;
     
 }
 
@@ -206,8 +242,10 @@ button{
 
 .inputDisplay, .outcomeDisplay{
     border: 0px solid gray;
+    word-wrap: break-word;
 }
 
 .inputDisplay{
     color: rgb(129, 121, 121);
+    font-weight: 300;
 }
