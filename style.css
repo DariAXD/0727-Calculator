@@ -138,6 +138,8 @@ main{
     max-width: 280px;
     max-height:414px;
 
+    flex:0 0 auto;
+
 }
 
 .operators{
@@ -213,8 +215,7 @@ button{
     border-radius: 50%;
     color:black;
 
-    flex-grow: 0;
-    flex-shrink: 0;
+    
     
 }
 
