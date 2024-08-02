@@ -201,6 +201,7 @@ main{
     
     background-color: rgb(246, 246, 246);
     opacity: 1;
+    
 }
 
 button{
@@ -210,6 +211,10 @@ button{
     font-size:32px;
     font-weight: 330;
     border-radius: 50%;
+    color:black;
+
+    flex-grow: 0;
+    flex-shrink: 0;
     
 }
 
